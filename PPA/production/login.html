@@ -1,103 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
 
-    <title>Gentelella Alela! | </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- Animate.css -->
-    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-  </head>
+    <body class="bg-color">
+        
+        <div class="container-fluid h-100">
+            <div class="row form-cadastro justify-content-center">
+                <div class="col-3 align-self-center area-form border">
+                   
+                    <div class="row justify-content-center mb-4">
+                        <img src="ifbalogo.png" alt="">
+                    </div>
 
-  <body class="login">
-    <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
+                    <span class="small d-block text-center">Cadastre-se com sua conta <b>Google</b></span>
+                    <button typle="button"class="btn btn-info  btn-block mt-2"style="background-color: teal">Google</button>
+                    
 
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
-              </div>
+                    <span class="small d-block text-center">ou</span>
+                    <span class="small d-block text-center">Crie um novo cadastro</span>
 
-              <div class="clearfix"></div>
+                    <form action="">
+                        <div class="input-group mt-2">
+                            <input type="text" class="form-control bg-light btn-outline-secondary" placeholder="Nome completo">
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="text" class="form-control bg-light btn-outline-secondary" placeholder="Número de matrícula">
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="text" class="form-control bg-light btn-outline-secondary" placeholder="Turma">
+                        </div>
+                        <div class="input-group mt-2">
+                            <input type="password" class="form-control bg-light btn-outline-secondary" placeholder="**********">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-secondary  btn-block mt-2">
+                                    Cancelar
+                                </button>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-info btn-block mt-2" style="background-color: green">
+                                    Cadastrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
-                </p>
+                    <button type="button"class="btn btn-info  btn-block mt-2" style="background-color: teal">Já tenho uma conta</button>
+                   
 
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
-              </div>
-            </form>
-          </section>
+            </div>
+
         </div>
 
-        <div id="register" class="animate form registration_form">
-          <section class="login_content">
-            <form>
-              <h1>Create Account</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+</head>
