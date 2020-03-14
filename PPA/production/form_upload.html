@@ -180,7 +180,22 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- INICIO FORMULARIO UPLOAD -->
-
+          <h2> Cadastrar nova Disciplina</h2>
+          <div>
+              <fieldset>
+                  <legend>Dados da Disciplina</legend>
+                  <form method="POST" action="formulario_disciplina.php">
+                      <label for="nomeDaDisc">Disciplina:</label>
+                      <input size="300" placeholder="Insira a Disciplina" type="text" id="nomeDaDisc" name="nomeDaDisc"><br>
+                      <label for="nomeDaProf">Professor(a):</label>
+                      <input size="300" placeholder="Insira o Nome do Professor" type="text" id="nomeDaProf" name="nomeDaProf"><br>
+                      <label for="descricao">Descrição:</label>
+                      <input size="300" placeholder="Insira a Descrição" type="text" id="descricao" name="descricao"><br>
+                      <input type="submit" value="Cadastrar">
+                  </form>
+              </fieldset>
+              <br>
+              <a href="index_disciplina.php">Disciplina cadastradas</a>
 
 
 
