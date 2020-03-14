@@ -31,8 +31,9 @@
   </head>
 
   <style>
-    form{
-      
+    .custom-select-sm{
+      border-color: transparent;
+      background-color: #e6e6ff;
     }
     input{
       border-color: transparent;
@@ -43,6 +44,11 @@
       width: 300px;
       
     }
+
+    #sexo{
+
+    }
+    
     
     fieldset.scheduler-border {
     border: 1px groove #ddd !important;
@@ -235,11 +241,7 @@ legend.scheduler-border {
                 <input type="text" name="nome" id="nome" class="campo"> <br>
                 </div>
              
-                <div class="form-group col-md-6">
-                Telefone: <br>
-                <input type="text" name="telefone" id="telefone" class="campo">
-                <br>
-                </div>
+                
                 
                 <div class="form-group col-md-6">
                   Email:
@@ -249,17 +251,24 @@ legend.scheduler-border {
                 </div>
                 
                 <div class="form-group col-md-6">
-                  <fieldset>
-                    <legend>Sexo * (Item obrigatório)</legend>
+                  <div class="custom-control custom-radio">
+                  
+                    Sexo<br>
                     <input type="radio" id="masc" name="sexo" value="Masculino">
-                    <label for="masc">Masculino</label>
+                    <label for="masc">Masculino</label><br>
                     <input type="radio" id="fem" name="sexo" value="Feminino">
                     <label for="fem">Feminino</label>
     
-                </fieldset>
+               
                 <br>
                 </div>
-                
+              </div>
+              
+                <div class="form-group col-md-6">
+                Telefone: <br>
+                <input type="text" name="telefone" id="telefone" class="campo">
+                <br>
+                </div>
                 <div class="form-group col-md-6">
                 Turma:
                 <br>
@@ -271,7 +280,7 @@ legend.scheduler-border {
               <div class="form-group col-md-6">  
                 Curso:
                 <br>
-                <select name="id_curso" id="id_curso"> 
+                <select name="id_curso" id="id_curso" class="custom-select-sm"> 
                     <option value="informatica">Informática (1)</option>
                     <option value="alimentos">Alimentos (2)</option>
                     <option value="edificacoes">Edificações (3)</option>
