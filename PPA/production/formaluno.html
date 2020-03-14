@@ -34,15 +34,22 @@
     .custom-select-sm{
       border-color: transparent;
       background-color: #e6e6ff;
+      color: rgb(85, 83, 83);
     }
     input{
       border-color: transparent;
       background-color: #e6e6ff;
       border-radius: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
     }
+
     #nome{
       width: 300px;
-      
+    }
+
+    #email{
+      width: 200px;
     }
     
     fieldset.scheduler-border {
@@ -59,12 +66,13 @@ legend.scheduler-border {
     border-bottom:none;
 }
 
-    #enviar{
-      width: 90px;
-      align-self: center;
-    }
+a,
+a:hover,
+a:active{
+  color: white;
+}
+ 
 
-    
   </style>
 
   <body class="nav-md">
@@ -261,13 +269,13 @@ legend.scheduler-border {
 
                 <div class="form-group col-md-6">
                 Telefone: <br>
-                <input type="text" name="telefone" id="telefone" class="campo">
+                <input type="tel" name="telefone" id="telefone" class="campo">
                 <br>
                 </div>
                 <div class="form-group col-md-6">
                 Turma:
                 <br>
-                <input type="number" name="id_turma" id="id_turma" class="campo">
+                <input type="text" name="id_turma" id="id_turma" class="campo">
                 <br>
               </div>
 
@@ -286,19 +294,20 @@ legend.scheduler-border {
                 <div class="form-group col-md-6">
                 Número de Matricula: 
                 <br>
-                <input type="number" name="num_matricula" id="num_matricula" class="campo">
+                <input type="text" name="num_matricula" id="num_matricula" class="campo">
                 <br>
                 </div>
 
                 <div class="form-group col-md-6">
                 Ano Letivo:
                 <br>
-                <input type="number" name="ano_letivo" id="ano_letivo" class="campo">
+                <input type="text" name="ano_letivo" id="ano_letivo" class="campo">
                 <br>
               </div>
               <br>
-                <input type="submit" name="Subimit" value="Enviar" id="enviar" class="btn btn-dark">
-                <button type="button" class="btn btn-link"> <a href="atualizar_alunos.php">Cadastrar</a></button>
+                <input type="submit" name="Subimit" value="Enviar" id="enviar" class="btn btn-dark"> <br>
+                <button type="button" class="btn btn-info" id="vercadastro"> 
+                  <a href="atualizar_alunos.php"> Alunos Cadastrados</a></button>
               </div>
               
               
