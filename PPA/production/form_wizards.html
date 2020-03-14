@@ -51,6 +51,18 @@ input{
       border-radius: 10px;
       size: 30px;
     }
+
+    .form-control{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      width: 300px;
+      
+    }
+
+    .form-control:focus{
+      background-color: #e6e6ff;
+    }
   </style>
 
   <body class="nav-md">
@@ -226,24 +238,25 @@ input{
                         </div>
 
                         <div class="form-group col-md-6">
-                          <label for="questão-Problema">Questão-Problema:</label>
-                          <input   id="problema" name="problema" ><br>
+                          <label for="questão-Problema">Questão-Problema:</label><br>
+                          <textarea class="form-control" id="questão-Problema" rows="3"> </textarea>
                         </div>
 
                         
                         <div class="form-group col-md-6">
                          <label for="justificativa">Justificativa:</label>
-                          <input   id="justificativa" name="justificativa"><br>
+                         <textarea class="form-control" id="justificativa" rows="3"> </textarea>
+                        
                         </div>
                           
                         <div class="form-group col-md-6"> 
-                          <label for="Objetivos Geral">Objetivo Geral::</label>
-                          <input   id="objetivogeral" name="objetivogeral"><br>
+                          <label for="Objetivos Geral">Objetivo Geral:</label>
+                          <textarea class="form-control" id="Objetivos Geral" rows="3"> </textarea>
                         </div>   
 
                         <div class="form-group col-md-6">
-                          <label for="objetivos Específicos:">Objetivos Específicos:</label>
-                          <input   id="objetivosespecificos" name="objetivosespecificos"><br>
+                          <label for="objetivosespecificos">Objetivos Específicos:</label>
+                          <textarea class="form-control" id="objetivosespecificos" rows="3"> </textarea>
                         </div> 
           
                         <div class="form-group col-md-6">
