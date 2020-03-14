@@ -30,6 +30,44 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
+  <style>
+    form{
+      
+    }
+    input{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+    }
+    #nome{
+      width: 300px;
+      
+    }
+    
+    fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+    #enviar{
+      width: 90px;
+      align-self: center;
+    }
+
+    .btn btn-dark{
+      align-self: center;
+    }
+  </style>
+
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -182,26 +220,38 @@
           <!-- INICIO CADASTRO ALUNO -->
 
           <nav>
-            Cadastro Aluno:
+            <h4> Cadastro Aluno </h4>
         </nav>
-        <h1>Por favor preenchas os dados referente ao aluno</h1>
         
+        <fieldset class="scheduler-border">
+          <legend class="scheduler-border"> Por favor, preencha os dados referentes ao aluno </legend>
             <form method="POST" action="form_aluno.php">
-                <h3>Nome</h3>
-                <br>
-                <input type="text" name="nome" id="nome" class="campo"> 
-                
              
+                
+               
+               <div class="form-row">
+               
+                <div class="form-group col-md-6">
+                Nome:
                 <br>
-                <h3>Telefone</h3>
+                <input type="text" name="nome" id="nome" class="campo"> <br>
+                </div>
+             
+                <div class="form-group col-md-6">
+                Telefone: <br>
                 <input type="text" name="telefone" id="telefone" class="campo">
                 <br>
-                <h3>Email:</h3>
+                </div>
+                
+                <div class="form-group col-md-6">
+                  Email:
                 <br>
                 <input type="email" name="email" id="email" class="campo">
                 <br>
-    
-                <fieldset>
+                </div>
+                
+                <div class="form-group col-md-6">
+                  <fieldset>
                     <legend>Sexo * (Item obrigatório)</legend>
                     <input type="radio" id="masc" name="sexo" value="Masculino">
                     <label for="masc">Masculino</label>
@@ -210,12 +260,18 @@
     
                 </fieldset>
                 <br>
+                </div>
                 
-                <h3>Turma:</h3>
+                <div class="form-group col-md-6">
+                Turma:
                 <br>
                 <input type="number" name="id_turma" id="id_turma" class="campo">
                 <br>
-                <h3>Curso:</h3>
+              </div>
+
+
+              <div class="form-group col-md-6">  
+                Curso:
                 <br>
                 <select name="id_curso" id="id_curso"> 
                     <option value="informatica">Informática (1)</option>
@@ -223,20 +279,30 @@
                     <option value="edificacoes">Edificações (3)</option>
                 </select>
                 <br>
+                </div>
                 
-                <h3>Número de Matricula:</h3> 
+                <div class="form-group col-md-6">
+                Número de Matricula: 
                 <br>
                 <input type="number" name="num_matricula" id="num_matricula" class="campo">
                 <br>
-                <h3>Ano Letivo:</h3>
+                </div>
+
+                <div class="form-group col-md-6">
+                Ano Letivo:
                 <br>
                 <input type="number" name="ano_letivo" id="ano_letivo" class="campo">
-                <br><br>
-                <input type="submit" name="Subimit" value="Enviar" class="enviar">
-           
                 <br>
+              </div>
+                
+                <input type="submit" name="Subimit" value="Enviar" id="enviar" class="btn btn-dark">
+                <br>
+              </div>
                 <button type="button"><a href="atualizar_alunos.php">cadastros</a></button>
+              
             </form>
+          </fieldset>
+          
         
        
 
