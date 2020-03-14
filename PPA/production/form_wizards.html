@@ -30,6 +30,29 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
+  <style>
+      fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+input{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      size: 30px;
+    }
+  </style>
+
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -185,51 +208,69 @@
 
             <h1>A Prática Profissional Articulada(PPA)</h1>
                   
-           <fieldset>
-                      <legend>Indentificação do Projeto</legend>
+           <fieldset class="scheduler-border">
+                      <legend class="scheduler-border">Identificação do Projeto</legend>
+
                       <form method="POST" action="formulario_proj.php">
-          
-                          <label for="titulo">Título:</label>
-                          <input size="300" id="titulo" name="titulo" ><br>
-                          
-          
-                          
-                          <label for="tema">Tema:</label>
-                          <input size="300" id="tema" name="tema"><br>
-                          <label for="questão-Problema">Questão-Problema:</label>
-                          <input size="300" id="problema" name="problema" ><br>
-                          <label for="justificativa">Justificativa:</label>
-                          <input size="300" id="justificativa" name="justificativa"><br>
-          
-                          
-                          
-                          <label for="Objetivos Geral">Objetivo Geral::</label>
-                          <input size="300" id="objetivogeral" name="objetivogeral"><br>
-                          <label for="objetivos Específicos:">Objetivos Específicos:</label>
-                          <input size="300" id="objetivosespecificos" name="objetivosespecificos"><br>
-          
-          
-          
-                          
-                          <label for="carga Horária">Carga horária:</label>
-                          <input size="300" id="horaria" name="horarias" ><br>
-                          <label for="atividades">Atividades:</label>
-                          <input size="300" id="atividades" name="atividades"><br>
-          
-                        
                     
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                          <label for="titulo">Título:</label>
+                          <input id="titulo" name="titulo" ><br>
+                        </div>
+
+          
+                        <div class="form-group col-md-6">
+                          <label for="tema">Tema:</label>
+                          <input   id="tema" name="tema"><br>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="questão-Problema">Questão-Problema:</label>
+                          <input   id="problema" name="problema" ><br>
+                        </div>
+
+                        
+                        <div class="form-group col-md-6">
+                         <label for="justificativa">Justificativa:</label>
+                          <input   id="justificativa" name="justificativa"><br>
+                        </div>
+                          
+                        <div class="form-group col-md-6"> 
+                          <label for="Objetivos Geral">Objetivo Geral::</label>
+                          <input   id="objetivogeral" name="objetivogeral"><br>
+                        </div>   
+
+                        <div class="form-group col-md-6">
+                          <label for="objetivos Específicos:">Objetivos Específicos:</label>
+                          <input   id="objetivosespecificos" name="objetivosespecificos"><br>
+                        </div> 
+          
+                        <div class="form-group col-md-6">
+                          <label for="carga Horária">Carga horária:</label>
+                          <input   id="horaria" name="horarias" ><br>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="atividades">Atividades:</label>
+                          <input   id="atividades" name="atividades"><br>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
                           <label for="avaliação do projeto">Avaliação do projeto:</label>
-                          <input size="300" id="projeto" name="projeto"><br>
-          
+                          <input   id="projeto" name="projeto"><br>
+                        </div>
+
+                        <div class="form-group col-md-6">
                           <label for="produto final">Produto final:</label>
-                          <input size="300" id="produto" name="produto"><br>
-                      
-                          </fieldset>
+                          <input   id="produto" name="produto"><br>
+                        </div>
+                    
                           
           
                           
                       
-                          <input type="submit" value="Enviar">
+                          <input type="submit" value="Enviar" class="btn btn-dark">
                       </form>
                   </fieldset>
                   <br>
