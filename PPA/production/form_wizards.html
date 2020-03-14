@@ -50,6 +50,8 @@ input{
       background-color: #e6e6ff;
       border-radius: 10px;
       size: 30px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
     }
 
     .form-control{
@@ -57,12 +59,23 @@ input{
       background-color: #e6e6ff;
       border-radius: 10px;
       width: 300px;
-      
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+      font-size: 10pt;
     }
 
     .form-control:focus{
       background-color: #e6e6ff;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+      font-size: 10pt;
     }
+
+    a,
+a:hover,
+a:active{
+  color: white;
+}
   </style>
 
   <body class="nav-md">
@@ -263,17 +276,14 @@ input{
                           <label for="atividades">Atividades:</label>
                           <textarea class="form-control" id="atividades" rows="3"> </textarea>
                         </div>
+
                         
-                        <div class="form-group col-md-6">
-                          <label for="carga Horária">Carga horária:</label>
-                          <input   id="horaria" name="horarias" ><br>
-                        </div>
 
                         
                         
                         <div class="form-group col-md-6">
                           <label for="avaliação do projeto">Avaliação do projeto:</label>
-                          <input   id="projeto" name="projeto"><br>
+                          <textarea class="form-control" id="avaliação do projeto" rows="3"> </textarea>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -281,15 +291,21 @@ input{
                           <input   id="produto" name="produto"><br>
                         </div>
                     
+                        <div class="form-group col-md-6">
+                          <label for="carga Horária">Carga horária:</label>
+                          <input   id="horaria" name="horarias" ><br>
+                        </div>
                           
           
                           
                       
                           <input type="submit" value="Enviar" class="btn btn-dark">
+                          <button type="button" class="btn btn-info" id="vercadastroprojeto"> 
+                           <a href="index_proj.php">Projetos Cadastrados</a> 
                       </form>
                   </fieldset>
                   <br>
-                  <a href="index_proj.php">Projetos Cadastrado (PPA)</a>
+                  
               </div>
           
 
