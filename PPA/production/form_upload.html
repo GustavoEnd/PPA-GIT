@@ -30,6 +30,53 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
+  <style>
+      fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+input{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      size: 30px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+    }
+
+    .form-control{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      width: 300px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+      font-size: 10pt;
+    }
+
+    .form-control:focus{
+      background-color: #e6e6ff;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+      font-size: 10pt;
+    }
+
+    a,
+a:hover,
+a:active{
+  color: white;
+}
+  </style>
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -180,22 +227,45 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- INICIO FORMULARIO UPLOAD -->
-          <h2> Cadastrar nova Disciplina</h2>
-          <div>
-              <fieldset>
-                  <legend>Dados da Disciplina</legend>
+         
+          <h4> Cadastrar nova Disciplina</h4>
+          
+
+                  <fieldset class="scheduler-border">
+                    <legend class="scheduler-border"> Dados da nova disciplina </legend>
                   <form method="POST" action="formulario_disciplina.php">
+
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
                       <label for="nomeDaDisc">Disciplina:</label>
-                      <input size="300" placeholder="Insira a Disciplina" type="text" id="nomeDaDisc" name="nomeDaDisc"><br>
+                      <input type="text" id="nomeDaDisc" name="nomeDaDisc"><br>
+                      </div>
+
+                      <div class="form-group col-md-9">
                       <label for="nomeDaProf">Professor(a):</label>
-                      <input size="300" placeholder="Insira o Nome do Professor" type="text" id="nomeDaProf" name="nomeDaProf"><br>
+                      <input type="text" id="nomeDaProf" name="nomeDaProf"><br>
+                      </div>
+                     
+                      <div class="form-group col-md-6">
                       <label for="descricao">Descrição:</label>
-                      <input size="300" placeholder="Insira a Descrição" type="text" id="descricao" name="descricao"><br>
-                      <input type="submit" value="Cadastrar">
+                      <textarea class="form-control" id="descricao" rows="3"> </textarea>
+                      
+                      <br>
+                      <input type="submit" value="Enviar" class="btn btn-dark">
+
+                      <button type="button" class="btn btn-info" id="disciplinascadastradas"> 
+
+                      <a href="index_disciplina.php">Disciplinas Cadastradas</a>
+                     </div> 
+                     
+                      
+
+                      </div>
+
                   </form>
               </fieldset>
               <br>
-              <a href="index_disciplina.php">Disciplina cadastradas</a>
+              
 
 
 
