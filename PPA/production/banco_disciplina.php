@@ -1,4 +1,8 @@
 <?php
+
+include 'banco.php';
+
+
 function cadastrar_disciplina($nomeDaDisc, $nomeDaProf, $descricao)
 {
     $conexao = conectar();
@@ -86,13 +90,4 @@ function excluir_disciplina($id_disc)
 }
 
 
-function conectar()
-{
-    $conn = new PDO(
-        "mysql:dbname=ppa_disc;host=localhost",
-        "root",
-        ""
-    );
 
-    return $conn;
-}

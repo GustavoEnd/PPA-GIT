@@ -296,8 +296,8 @@
                                 <?php
                                 echo  '<select name="id_curso" id="id_curso" class="custom-select-sm">';
 
-
-                                include 'banco_curso.php';
+                                include 'banco.php';
+                                include 'banco_curso.php';                               
                                 $result = get_cursos();
                                 foreach ($result as $linha) {
                                     echo '<option value="' . $linha['id_curso'] . '">' .   $linha['descricaoCurso'] . '</option>';
@@ -307,6 +307,25 @@
                                 ?>
                                 <br>
                             </div>
+
+                            <div class="form-group col-md-6">
+                                Turma:
+                                <br>
+                                <?php
+                                echo  '<select name="id_turma" id="id_turma" class="custom-select-sm">';
+
+
+                                include 'banco_turma.php';
+                                $result = get_turmas();
+                                foreach ($result as $linha) {
+                                    echo '<option value="' . $linha['id_turma'] . '">' .   $linha['descricaoTurma'] . '</option>';
+                                }
+                                echo '</select>';
+
+                                ?>
+                                <br>
+                            </div>
+
 
                             <div class="form-group col-md-6">
                                 Número de Matricula:

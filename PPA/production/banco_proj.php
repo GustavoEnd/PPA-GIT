@@ -1,4 +1,6 @@
 <?php
+
+include 'banco.php';
 function cadastrar_projeto($titulo, $tema, $problema, $justificativa, 
 $objetivogeral, $objetivosespecificos, $horarias, $atividades, $projeto, $produto)
 {
@@ -105,13 +107,3 @@ function excluir_projeto($id_projeto)
 }
 
 
-function conectar()
-{
-    $conn = new PDO(
-        "mysql:dbname=bancoppa;host=localhost",
-        "aluno",
-        "aluno@IFBA"
-    );
-
-    return $conn;
-}

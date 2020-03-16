@@ -1,6 +1,6 @@
 <?php
 
-
+include 'banco.php';
 function cadastrar_professor($nome, $email, $matricula)
 {
 
@@ -33,13 +33,4 @@ function get_professores()
     return $result;
 }
 
-function conectar()
-{
-    try {
 
-        $conn = new PDO("mysql:dbname=ppave;host=localhost", "sena", "P@ssw0rd");
-        return $conn;
-    } catch (PDOException $e) {
-        echo "<br>" . $e->getMessage();
-    }
-}

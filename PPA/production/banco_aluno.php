@@ -1,5 +1,6 @@
 <?php
 
+include 'banco.php';
 
 function cadastrar_aluno($nome, $email, $id_turma, $ano_letivo, $sexo, $telefone, $num_matricula)
 {
@@ -49,15 +50,15 @@ function get_usuario($num_matricula)
     return $result;
 }
 
-function atualizar_aluno($nome, $email, $id_turma,$id_curso, $ano_letivo, $sexo, $telefone, $num_matricula)
+function atualizar_aluno($nome, $email, $id_turma, $id_curso, $ano_letivo, $sexo, $telefone, $num_matricula)
 {
     $conn = conectar();
 
-    
+
     $sql = "UPDATE aluno SET nome =  :NOME, email = :EMAIL, id_curso = :CURSO, id_turma = :TURMA, ano_letivo = :ANO_LETIVO, sexo = :SEXO, telefone = :TELEFONE WHERE num_matricula = :NUM_MATRICULA";
-    
+
     echo $sql;
-   
+
     $declaracao = $conn->prepare($sql);
 
     $declaracao->bindParam(":NOME", $nome);
@@ -81,24 +82,13 @@ function excluir_aluno($num_matricula)
     $conexao = conectar();
 
     $declaracao = $conexao->prepare("DELETE FROM aluno WHERE num_matricula = :NUM_MATRICULA");
-    $declaracao->bindParam(":NUM_MATRICULA",$num_matricula);
+    $declaracao->bindParam(":NUM_MATRICULA", $num_matricula);
 
     $retorno = $declaracao->execute();
 
-    if($retorno){
+    if ($retorno) {
         header('Location:atualizar_aluno.php');
-    }else{
+    } else {
         echo "Erro ao deletar o aluno";
     }
 }
-function conectar()
-{
-    $conn = new PDO(
-        "mysql:dbname=ppave;host=localhost",
-        "sena",
-        "P@ssw0rd"
-    );
-
-    return $conn;
-}
-?>
