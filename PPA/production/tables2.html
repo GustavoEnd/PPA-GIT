@@ -30,6 +30,36 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
+  <style>
+      fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.custom-select-sm{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      color: rgb(85, 83, 83);
+    }
+    input{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+    }
+
+  </style>
+
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -179,64 +209,63 @@
 
           <!--inicioooo-->
 
+          <h4> Gráficos </h4>
           
-                    <div class="container-fluid h-100">
-                      <div class="row form-cadastro justify-content-center"></div>
-                          <div class="col-5 align-self-center area-form border">
-                             
-                              <div class="row justify-content-center mb-4">
-                                <div id="area_grafico"></div>
-                              </div>
-          
-                              <span class="small d-block text-center">Insira os dados para criar um <b>Gráfico</b></span>
-                              <button type="button"class="btn btn-info  btn-block mt-2"style="background-color: teal" onclick="desenharGrafico2()">Inserir gráfico de pizza</button>
-                              
-                              
-                              
-                              <span class="small d-block text-center">Dados:</span>
-          
-                              <form action="">
-                                  <div class="input-group mt-2">
-                                      <input id="tituloGrafico" type="text" class="form-control bg-light btn-outline-secondary" placeholder="Títuto do gráfico ">
+          <fieldset class="scheduler-border"> 
+            <legend class="scheduler-border"> Insira os dados para criar um gráfico </legend>        
+            
+            <div class="row form-cadastro justify-content-center"></div>
+    
+               
+                  <div id="area_grafico"></div>
+                
+                        <form action="">
+                               
+                             <div class="form-row">
+                                  <div class="form-group col-md-6" >
+                                    <br> Título do gráfico <br>
+                                      <input size="70px" id="tituloGrafico" type="text" class="campo">
                                   </div>
-                                  <div class="input-group mt-2">
-                                      <input id="tituloDado1" type="text" class="form-control bg-light btn-outline-secondary" placeholder="Títuto do dado 1 ">
+
+                                  <div class="form-group col-md-6" >
+
+                                    
                                   </div>
-                                  <div class="input-group mt-2">
-                                      <input id="dado1" type="number" class="form-control bg-light btn-outline-secondary" placeholder="Dado 1 ">
+
+                                  <div class="form-group col-md-6">
+                                    <br> Título do dado 1 <br>
+                                      <input id="tituloDado1" type="text" class="campo">
                                   </div>
-                                  <div class="input-group mt-2">
-                                      <input id="tituloDado2" type="text" class="form-control bg-light btn-outline-secondary" placeholder="Título do dado 2 ">
-                                  </div>
-                                  <div class="input-group mt-2">
-                                    <input id="dado2" type="number" class="form-control bg-light btn-outline-secondary" placeholder="Dado 2 ">
-                                </div>
-                                <div id="divDados"class="input-group mt-2" style="display: flex;flex-direction:column;background-color: black;flex: 200 200 200;">
-                                  
-                                </div>
                                 
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <button type="button" class="btn btn-secondary  btn-block mt-2">
-                                              Cancelar
-                                          </button>
-                                      </div>
-                                      
-                                      <div class="col-md-6">
-                                          <button onclick="desenharGrafico1()" type="button" class="btn btn-info btn-block mt-2" style="background-color: green">
-                                              Inserir gráfico de linha
-                                          </button>
-                                      </div>
+                                  <div class="form-group col-md-6">
+                                    <br> Título do dado 2 <br>
+                                      <input id="tituloDado2" type="text" class="campo">
                                   </div>
-                              </form>
+                                
+                                  <div class="form-group col-md-6">
+                                    <br> Dado 1 <br>
+                                      <input id="dado1" type="text" class="campo">
+                                  </div>
+
+                                  <div class="form-group col-md-6">
+                                    <br> Dado 2 <br>
+                                    <input id="dado2" type="text" class="campo">
+                                </div>
+                              </div>
+                              <br>
+                                  <button onclick="" type="button" class="btn btn-dark" style="background-color: rgb(148, 25, 25);"> Cancelar </button>   
+                                  <button onclick="desenharGrafico1()" type="button" class="btn btn-dark">Inserir gráfico de linha </button>
+                                           <button type="button"class="btn btn-dark"  onclick="desenharGrafico2()">Inserir gráfico de pizza</button>
+                 
+                                        <button onclick="AdicionarElementos()" type="button"class="btn btn-dark"> Adicionar mais dados</button>
+                                                                
+                                        <button onclick="criarPDF()" type="button"class="btn btn-dark" style="background-color: teal">Exportar para PDF</button>
+                        </form>
           
-                              <button onclick="AdicionarElementos()" type="button"class="btn btn-info  btn-block mt-2" style="background-color: teal">Adicionar mais dados</button>
-                              <button onclick="criarPDF()" type="button"class="btn btn-info  btn-block mt-2" style="background-color: teal">Exportar para PDF</button>
+                         
+                </fieldset>   
           
-                          </div>
-                      </div>
-          
-                  </div>
+                  
           
             
            <!-- Carregar a API do google -->
@@ -385,13 +414,7 @@
               }else{
                 alert("erro");
               }
-               
-          
-              
-          
-               
-               
-          
+             
                // Configuracoes do grafico
                var config = {
                    'title':tituloGrafico,
@@ -426,7 +449,7 @@
           
               win.print();   
           }
-          
+
           var i = 2;
           var cont = 2;
           function AdicionarElementos(){
@@ -439,10 +462,7 @@
               elementInputText.id="tituloDado"+cont;
               elementInputText.className="form-control bg-light btn-outline-secondary";
               elementInputText.placeholder="Título dado "+i;
-              
-             
-              
-             
+           
           
               var elementBr = document.createElement("br");
               
@@ -462,23 +482,10 @@
               divDados.appendChild(elementBr);
              
           
-             
-          
-              
           }
            </script>
           
-          
-          
-        
-
-          
-
-
-
-
-
-          <!---finalllll-->>
+          <!---finalllll-->
 
           
           
