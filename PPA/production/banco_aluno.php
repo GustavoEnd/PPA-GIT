@@ -1,17 +1,16 @@
 <?php
 
 
-function cadastrar_aluno($nome, $email, $id_curso, $id_turma, $ano_letivo, $sexo, $telefone, $num_matricula)
+function cadastrar_aluno($nome, $email, $id_turma, $ano_letivo, $sexo, $telefone, $num_matricula)
 {
     $conexao = conectar();
 
-    $sql = 'INSERT INTO aluno (nome, email, id_curso, id_turma, ano_letivo, sexo, telefone, num_matricula) VALUES (:NOME,:EMAIL,:CURSO,:TURMA,:ANO_LETIVO,:SEXO,:TELEFONE,:NUM_MATRICULA)';
+    $sql = 'INSERT INTO aluno (nome, email, id_turma, sexo, telefone, matricula,ano) VALUES (:NOME,:EMAIL,:TURMA,:ANO_LETIVO,:SEXO,:TELEFONE,:NUM_MATRICULA)';
 
     $declaracao = $conexao->prepare($sql);
 
     $declaracao->bindParam(":NOME", $nome);
     $declaracao->bindParam(":EMAIL", $email);
-    $declaracao->bindParam(":CURSO", $id_curso);
     $declaracao->bindParam(":TURMA", $id_turma);
     $declaracao->bindParam(":ANO_LETIVO", $ano_letivo);
     $declaracao->bindParam(":SEXO", $sexo);
@@ -20,10 +19,10 @@ function cadastrar_aluno($nome, $email, $id_curso, $id_turma, $ano_letivo, $sexo
 
     $declaracao->execute();
 
-    header('Location:form_aluno.html');
+    header('Location:lista_aluno.php');
 }
 
-function get_usuarios()
+function get_alunos()
 {
     $conexao = conectar();
 
@@ -95,9 +94,9 @@ function excluir_aluno($num_matricula)
 function conectar()
 {
     $conn = new PDO(
-        "mysql:dbname=ppa;host=localhost",
+        "mysql:dbname=ppave;host=localhost",
         "sena",
-        "password"
+        "P@ssw0rd"
     );
 
     return $conn;

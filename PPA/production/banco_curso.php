@@ -6,28 +6,38 @@ function cadastrar_professor($nome, $email, $matricula)
 
     $conexao = conectar();
 
-    $sql = "INSERT INTO professores (nome, email, matricula) VALUES (:NOME,:EMAIL,:MATRICULA)";
+    $sql = "INSERT INTO professor (nome, email, matricula) VALUES (:NOME,:EMAIL,:MATRICULA)";
     try {
         $declaracao = $conexao->prepare($sql);
 
         $declaracao->bindParam(":NOME", $nome);
         $declaracao->bindParam(":EMAIL", $email);
         $declaracao->bindParam(":MATRICULA", $matricula);
-        echo $nome;
-        echo '<br>';
-        echo $declaracao->execute();
+        $declaracao->execute();
+        header('Location:lista_professor.php');
     } catch (PDOException $e) {
         echo $sql . "<br>" . $e->getMessage();
     }
+}
 
-    // header('Location:../form/index.html');
+function get_cursos()
+{
+    $conexao = conectar();
+
+    $declaracao  = $conexao->prepare("SELECT * FROM curso order by descricaoCurso");
+
+    $declaracao->execute();
+
+    $result = $declaracao->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
 }
 
 function conectar()
 {
     try {
 
-        $conn = new PDO("mysql:dbname=ppa;host=localhost", "aluno", "aluno");
+        $conn = new PDO("mysql:dbname=ppave;host=localhost", "sena", "P@ssw0rd");
         return $conn;
     } catch (PDOException $e) {
         echo "<br>" . $e->getMessage();
