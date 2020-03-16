@@ -30,6 +30,35 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
   </head>
 
+  <style>
+     fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+}
+
+.custom-select-sm{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      color: rgb(85, 83, 83);
+    }
+    input{
+      border-color: transparent;
+      background-color: #e6e6ff;
+      border-radius: 10px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: grey;
+    }
+  </style>
+
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -182,32 +211,44 @@
                     
                       
                             
-                                <span class="small d-block text-center">Cadastro Professor</span>
+                            <h4> Cadastro Professor </h4>
+                            <fieldset class="scheduler-border">
+                              <legend class="scheduler-border"> Por favor, preencha os dados referentes ao professor </legend>
             
                                 <form method="POST" action="../php/cadastroProfessor.php">
-                                    <div class="input-group mt-2">
-                                        <input id="nome" name="nome" type="text" class="form-control bg-light btn-outline-secondary" placeholder="Nome completo">
+                                  <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                      <br> Nome <br>
+                                      <input id="nome" name="nome" type="text" class="campo">    
                                     </div>
-                                    <div class="input-group mt-2">
-                                        <input id="matricula" name="matricula" type="text" class="form-control bg-light btn-outline-secondary" placeholder="Número de matrícula">
+
+                                    <div class="form-group col-md-6">
+                                      <br> Matrícula <br>
+                                        <input id="matricula" name="matricula" type="text" class="campo">
                                     </div>
-                                    <div class="input-group mt-2">
-                                        <input id="email" name="email" type="email" class="form-control bg-light btn-outline-secondary" placeholder="Email">
+
+                                    <div class="form-group col-md-6">
+                                      <br> E-mail<br>
+                                      <input id="email" name="email" type="text" class="campo">
                                     </div>
-                                    <div class="input-group mt-2">
-                                        <input id="senha" name="senha" type="password" class="form-control bg-light btn-outline-secondary" placeholder="**********">
+
+                                    <div class="form-group col-md-6">
+                                      <br> Senha <br>
+                                      <input id="senha" name="senha" type="password" class="campo">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <button type="button" class="btn btn-secondary  btn-block mt-2">
+                                   
+                                    <div class="form-group col-md-6">
+                                      <br>
+                                         <input type="submit" class="btn btn-dark" value="Enviar">
+                                         <button type="button" class="btn btn-danger">
                                                 Cancelar
                                             </button>
+                                          </div>
+
                                         </div>
-                                        
-                                        <div class="col-md-6">
-                                            <input type="submit">
-                                        </div>
-                                    </div>
+                                 
+                                  </fieldset>
                                 </form>
             
                                           
