@@ -34,6 +34,24 @@
 
 </head>
 
+<style>
+ fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+    
+    legend.scheduler-border {
+        width: inherit;
+        /* Or auto */
+        padding: 0 10px;
+        /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+  </style>
+
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
@@ -207,12 +225,14 @@
         <div class="text-center">
 
 
-          <h2 class="sub_titulo">Alunos Cadastrados</h2>
+          <h2> </h2>
 
           <div>
-
-
-            <table>
+          <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Alunos Cadastrados</legend>
+          
+            <table class="table">
+            <thead class="thead-dark">
               <tr>
                 <th>Nome</th>
                 <th>Telefone</th>
@@ -224,6 +244,7 @@
                 <th>Ano letivo</th>
                 <th colspan='2' style='text-align: center'>Ações</th>
               </tr>
+            </thead>
               <?php
               include 'banco_aluno.php';
               $result = get_alunos();
@@ -247,6 +268,7 @@
 
               ?>
             </table>
+          </fieldset>
           </div>
 
         </div>

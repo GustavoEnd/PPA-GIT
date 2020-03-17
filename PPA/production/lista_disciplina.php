@@ -30,89 +30,9 @@
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
 
-  <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-      border-radius: 5px;
-    }
+  <link href="ppa_estilo.css" rel="stylesheet">
 
-    td,
-    th {
-      border: 1px solid #4682B4;
-      text-align: left;
-      padding: 5px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #4682B4;
-    }
-
-    .btnExcluir:link,
-    .btnExcluir:visited {
-      background-color: #f44336;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-    }
-
-    .btnEditar:link,
-    .btnEditar:visited {
-      background-color: #FFA500;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-    }
-
-    .btnExcluir:hover,
-    .btnExcluir:active {
-      background-color: red;
-      border-radius: 5px;
-    }
-
-    .btnEditar:hover,
-    .btnEditar:active {
-      background-color: #FF4500;
-      border-radius: 5px;
-    }
-
-    .linkNovo {
-      margin-top: 10px;
-    }
-
-    .linkNovo:link,
-    .linkNovo:visited {
-      background-color: #6495ED;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-
-    }
-
-    .linkNovo:hover,
-    .linkNovo:active {
-      background-color: #4169E1;
-      border-radius: 5px;
-    }
-
-    .sub_titulo {
-      text-align: center;
-      background-color: #4682B4;
-      border-radius: 5px;
-    }
-  </style>s
-
-
+ 
 
 </head>
 
@@ -336,10 +256,14 @@
       <!-- /top navigation -->
       <!-- index.html -->
       <!-- page content -->
-      <div class="right_col" role="main">
-        <!-- INICIO FORMULARIO UPLOAD -->
 
-        <table>
+      <div class="right_col" role="main">
+      <div class="text-center">
+        
+      <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Disciplinas Cadastradas</legend>
+        <table class="table">
+          <thead class="thead-dark">
           <tr>
             <th>Código</th>
             <th>Nome</th>
@@ -348,6 +272,7 @@
 
             <th colspan='2'>Ações</th>
           </tr>
+          </thead>
           <?php
           include 'banco_disciplina.php';
           $result = get_disciplinas();
@@ -365,10 +290,12 @@
           echo '</table>';
           ?>
           <!-- FIM FORMULARIO UPLOAD -->
+        </fieldset>
       </div>
+      
       <!-- /page content -->
 
-      <!-- footer content -->
+      <!-- footer content --></div>
       <footer>
         <div class="pull-right">
           Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
@@ -376,7 +303,9 @@
         <div class="clearfix"></div>
       </footer>
       <!-- /footer content -->
-    </div>
+      
+      </div>
+    
   </div>
 
   <!-- jQuery -->

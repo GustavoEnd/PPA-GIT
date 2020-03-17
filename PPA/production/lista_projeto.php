@@ -29,142 +29,29 @@
 
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
-
-  <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    td,
-    th {
-      border: 1px solid #4682B4;
-      text-align: left;
-      padding: 5px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #4682B4;
-    }
-
-    .btnExcluir:link,
-    .btnExcluir:visited {
-      background-color: #f44336;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-    }
-
-    .btnEditar:link,
-    .btnEditar:visited {
-      background-color: #FFA500;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-    }
-
-    .btnExcluir:hover,
-    .btnExcluir:active {
-      background-color: red;
-      border-radius: 5px;
-    }
-
-    .btnEditar:hover,
-    .btnEditar:active {
-      background-color: #FF4500;
-      border-radius: 5px;
-    }
-
-    .linkNovo {
-      margin-top: 10px;
-    }
-
-    .linkNovo:link,
-    .linkNovo:visited {
-      background-color: #6495ED;
-      color: white;
-      padding: 7px 12px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 5px;
-
-    }
-
-    .linkNovo:hover,
-    .linkNovo:active {
-      background-color: #4169E1;
-      border-radius: 5px;
-    }
-
-    .sub_titulo {
-      text-align: center;
-      background-color: #4682B4;
-      border-radius: 5px;
-    }
-  </style>s
-
+  <link href="ppa_estilo.css" rel="stylesheet">
+ 
 
 
 </head>
 
 <style>
-  fieldset.scheduler-border {
-    border: 1px groove #ddd !important;
-    padding: 0 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
-    -webkit-box-shadow: 0px 0px 0px 0px #000;
-    box-shadow: 0px 0px 0px 0px #000;
-  }
-
-  legend.scheduler-border {
-    width: inherit;
-    /* Or auto */
-    padding: 0 10px;
-    /* To give a bit of padding on the left and right */
-    border-bottom: none;
-  }
-
-  input {
-    border-color: transparent;
-    background-color: #e6e6ff;
-    border-radius: 10px;
-    size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: grey;
-  }
-
-  .form-control {
-    border-color: transparent;
-    background-color: #e6e6ff;
-    border-radius: 10px;
-    width: 300px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: grey;
-    font-size: 10pt;
-  }
-
-  .form-control:focus {
-    background-color: #e6e6ff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: grey;
-    font-size: 10pt;
-  }
-
-  a,
-  a:hover,
-  a:active {
-    color: white;
-  }
-</style>
+ fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+    
+    legend.scheduler-border {
+        width: inherit;
+        /* Or auto */
+        padding: 0 10px;
+        /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+  </style>
 
 <body class="nav-md">
   <div class="container body">
@@ -337,9 +224,13 @@
       <!-- index.html -->
       <!-- page content -->
       <div class="right_col" role="main">
+      <div class="text-center">
         <!-- INICIO FORMULARIO UPLOAD -->
 
-        <table>
+        <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Projetos Cadastrados</legend>
+        <table class="table">
+        <thead class="thead-dark">
           <tr>
             <th>Código</th>
             <th>Título</th>
@@ -355,6 +246,7 @@
 
             <th colspan='2'>Ações</th>
           </tr>
+        </thead>
           <?php
           include 'banco_proj.php';
           $result = get_projetos();
@@ -379,6 +271,7 @@
           echo '</table>';
           ?>
           <!-- FIM FORMULARIO UPLOAD -->
+        </fieldset>
       </div>
       <!-- /page content -->
 
@@ -390,6 +283,7 @@
         <div class="clearfix"></div>
       </footer>
       <!-- /footer content -->
+      </div>
     </div>
   </div>
 
