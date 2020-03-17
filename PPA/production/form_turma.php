@@ -29,7 +29,54 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+
+    <style>
+        .custom-select-sm {
+            border-color: transparent;
+            background-color: #e6e6ff;
+            color: rgb(85, 83, 83);
+        }
+
+        input {
+            border-color: transparent;
+            background-color: #e6e6ff;
+            border-radius: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: grey;
+        }
+
+        #nome {
+            width: 300px;
+        }
+
+        #email {
+            width: 200px;
+        }
+
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend.scheduler-border {
+            width: inherit;
+            /* Or auto */
+            padding: 0 10px;
+            /* To give a bit of padding on the left and right */
+            border-bottom: none;
+        }
+
+        a,
+        a:hover,
+        a:active {
+            color: white;
+        }
+    </style>
 </head>
+
 
 <body class="nav-md">
     <div class="container body">
@@ -57,8 +104,8 @@
 
                     <br />
 
-                    <!-- sidebar menu -->
-                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                     <!-- sidebar menu -->
+                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <h3></h3>
                             <ul class="nav side-menu">
@@ -121,6 +168,7 @@
 
                     </div>
                     <!-- /sidebar menu -->
+
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
                         <a data-toggle="tooltip" data-placement="top" title="Configurações">
@@ -174,12 +222,12 @@
                                         <a class="dropdown-item">
                                             <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                          <span>Professor(a)</span>
-                                            <span class="time">3 mins atrás</span>
+                                                <span>Professor(a)</span>
+                                                <span class="time">3 mins atrás</span>
                                             </span>
                                             <span class="message">
-                          cadastro concluído!
-                        </span>
+                                                cadastro concluído!
+                                            </span>
                                         </a>
                                     </li>
 
@@ -201,23 +249,130 @@
             <!-- index.html -->
             <!-- page content -->
             <div class="right_col" role="main">
-                <div class="text-center">
-                    <img src="emobras.png" alt="icone" width="300px" class="rounded mx-auto d-block">
-                </div>
+                <!-- INICIO CADASTRO ALUNO -->
 
+                <nav>
+                    <h4> Cadastro Turma </h4>
+                </nav>
+
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border"> Por favor, preencha os dados referentes ao turma </legend>
+                    <form method="POST" action="formulario_turma.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                Descrição:
+                                <br>
+                                <input type="text" name="descricao" id="descricao" class="campo"> <br>
+                            </div>
+                           
+                            <div class="form-group col-md-6">
+                                Série: <br>
+                                <input type="text" name="serie" id="serie" class="campo">
+                                <br>
+                            </div>
+
+                           <div class="form-group col-md-6">
+                                Curso:
+                                <br>
+                                <?php
+                                echo  '<select name="id_curso" id="id_curso" class="custom-select-sm">';
+
+                                include 'banco.php';
+                                include 'banco_curso.php';
+                                $result = get_cursos();
+                                foreach ($result as $linha) {
+                                    echo '<option value="' . $linha['id_curso'] . '">' .   $linha['descricaoCurso'] . '</option>';
+                                }
+                                echo '</select>';
+
+                                ?>
+                                <br>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                Turno:
+                                <br>
+
+                                <select name="turno" id="turno" class="custom-select-sm">
+
+                                    <option value="Matutino">Matutino</option>
+                                    <option value="Vespertino">Vespertino</option>
+                                    <option value="Noturno">Noturno</option>
+
+                                </select>
+
+
+                                <br>
+                            </div>
+
+
+                            <div class="form-group col-md-6">
+                                Ano Letivo:
+                                <br>
+                                <input type="number" name="ano_letivo" id="ano_letivo" class="campo">
+                                <br>
+                            </div>
+                            <br>
+                            <div class="form-group col-md-6 ">
+                                <br>
+                                <button type="submit" class="btn btn-dark">Enviar</button>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </form>
+                </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- FIM CADASTRO ALUNO -->
             </div>
             <!-- /page content -->
 
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
         </div>
-        <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-    </div>
     </div>
 
     <!-- jQuery -->
@@ -228,11 +383,34 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
     <script src="../vendors/iCheck/icheck.min.js"></script>
-
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="../vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="../vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="../vendors/starrr/dist/starrr.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+
 </body>
 
 </html>

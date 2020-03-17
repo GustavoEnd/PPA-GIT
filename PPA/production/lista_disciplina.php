@@ -30,9 +30,141 @@
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
 
-  <link href="ppa_estilo.css" rel="stylesheet">
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    td,
+    th {
+      border: 1px solid #4682B4;
+      text-align: left;
+      padding: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #4682B4;
+    }
+
+    .btnExcluir:link,
+    .btnExcluir:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 7px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .btnEditar:link,
+    .btnEditar:visited {
+      background-color: #FFA500;
+      color: white;
+      padding: 7px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .btnExcluir:hover,
+    .btnExcluir:active {
+      background-color: red;
+      border-radius: 5px;
+    }
+
+    .btnEditar:hover,
+    .btnEditar:active {
+      background-color: #FF4500;
+      border-radius: 5px;
+    }
+
+    .linkNovo {
+      margin-top: 10px;
+    }
+
+    .linkNovo:link,
+    .linkNovo:visited {
+      background-color: #6495ED;
+      color: white;
+      padding: 7px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+
+    }
+
+    .linkNovo:hover,
+    .linkNovo:active {
+      background-color: #4169E1;
+      border-radius: 5px;
+    }
+
+    .sub_titulo {
+      text-align: center;
+      background-color: #4682B4;
+      border-radius: 5px;
+    }
+  </style>s
+
+
 
 </head>
+
+<style>
+  fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+  }
+
+  legend.scheduler-border {
+    width: inherit;
+    /* Or auto */
+    padding: 0 10px;
+    /* To give a bit of padding on the left and right */
+    border-bottom: none;
+  }
+
+  input {
+    border-color: transparent;
+    background-color: #e6e6ff;
+    border-radius: 10px;
+    size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+  }
+
+  .form-control {
+    border-color: transparent;
+    background-color: #e6e6ff;
+    border-radius: 10px;
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+    font-size: 10pt;
+  }
+
+  .form-control:focus {
+    background-color: #e6e6ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+    font-size: 10pt;
+  }
+
+  a,
+  a:hover,
+  a:active {
+    color: white;
+  }
+</style>
 
 <body class="nav-md">
   <div class="container body">
@@ -60,8 +192,8 @@
 
           <br />
 
-          <!-- sidebar menu -->
-          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
               <h3></h3>
               <ul class="nav side-menu">
@@ -124,6 +256,7 @@
 
           </div>
           <!-- /sidebar menu -->
+
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
             <a data-toggle="tooltip" data-placement="top" title="Configurações">
@@ -204,55 +337,37 @@
       <!-- index.html -->
       <!-- page content -->
       <div class="right_col" role="main">
-        <div class="text-center">
+        <!-- INICIO FORMULARIO UPLOAD -->
 
+        <table>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>C.H</th>
 
-          <h2 class="sub_titulo">Alunos Cadastrados</h2>
-
-          <div>
-
-
-            <table>
-              <tr>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Sexo</th>
-                <th>Curso</th>
-                <th>Turma</th>
-                <th>Número da Matricula</th>
-                <th>Ano letivo</th>
-                <th colspan='2' style='text-align: center'>Ações</th>
-              </tr>
-              <?php
-              include 'banco_aluno.php';
-              $result = get_alunos();
-              foreach ($result as $linha) {
-                echo '<tr>';
-                echo '<td>' . $linha["nome"] . '</td>';
-                echo '<td>' . $linha["telefone"] . '</td>';
-                echo '<td>' . $linha["email"] . '</td>';
-                echo '<td>' . $linha["sexo"] . '</td>';
-                echo '<th>' . $linha["id_turma"] . '</th>';
-                // echo '<td>' . $linha["id_curso"] . '<th>';
-                echo '<th>' . $linha["matricula"] . '</th>';
-                echo '<th>' . $linha["ano"] . '</th>';
-
-                $num_matricula = $linha["matricula"];
-                echo '<td><a class="btnExcluir" href="excluir_aluno.php?matricula=' .
-                  $num_matricula . '">Excluir</a></td>';
-                echo '<td><a class="btnEditar" href="editar_usuarios.php?matricula=' . $num_matricula . '">Editar</a></td>';
-                echo '</tr>';
-              }
-
-              ?>
-            </table>
-          </div>
-
-        </div>
-        <!-- /page content -->
-
+            <th colspan='2'>Ações</th>
+          </tr>
+          <?php
+          include 'banco_disciplina.php';
+          $result = get_disciplinas();
+          foreach ($result as $linha) {
+            echo '<tr>';
+            echo '<td>' . $linha["id_disciplina"] . '</td>';
+            echo '<td>' . $linha["nome"] . '</td>';
+            echo '<td>' . $linha["descricaoDisciplina"] . '</td>';
+            echo '<td>' . $linha["ch"] . '</td>';
+            $id_disciplina = $linha["id_disciplina"];
+            echo '<td><a class="btnExcluir" href="excluir_proj.php?id_disciplina=' . $id_disciplina . '">Excluir</a></td>';
+            echo '<td><a class="btnEditar" href="editar_projetos.php?id_disciplina=' . $id_disciplina . '">Editar</a></td>';
+            echo '</tr>';
+          }
+          echo '</table>';
+          ?>
+          <!-- FIM FORMULARIO UPLOAD -->
       </div>
+      <!-- /page content -->
+
       <!-- footer content -->
       <footer>
         <div class="pull-right">
@@ -272,8 +387,8 @@
   <script src="../vendors/fastclick/lib/fastclick.js"></script>
   <!-- NProgress -->
   <script src="../vendors/nprogress/nprogress.js"></script>
-  <!-- iCheck -->
-  <script src="../vendors/iCheck/icheck.min.js"></script>
+  <!-- Dropzone.js -->
+  <script src="../vendors/dropzone/dist/min/dropzone.min.js"></script>
 
   <!-- Custom Theme Scripts -->
   <script src="../build/js/custom.min.js"></script>

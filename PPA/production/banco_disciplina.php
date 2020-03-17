@@ -4,21 +4,22 @@ include 'banco.php';
 
 
 function cadastrar_disciplina($nomeDaDisc, $carga, $descricao)
-{   
+{
     $conexao = conectar();
 
-    $sql = "INSERT INTO disciplina (nome, descricaoDisciplina, ch) VALUES (:NOME,:DESCR,:CH)";
+    $sql = 'INSERT INTO disciplina (nome, descricaoDisciplina, ch) VALUES (:NOME,:DESCR,:CH)';
+
 
     $declaracao = $conexao->prepare($sql);
 
     $declaracao->bindParam(":NOME", $nomeDaDisc);
-    $declaracao->bindParam(":DESCR", $carga);
-    $declaracao->bindParam(":CH", $descricao);
+    $declaracao->bindParam(":DESCR", $descricao);
+    $declaracao->bindParam(":CH", $carga);
 
 
     $declaracao->execute();
 
-    header('Location:formdisciplina.html');
+    header('Location:lista_disciplina.php');
 }
 
 function atualizar_disciplina($id_disc, $nomeDaDisc, $nomeDaProf, $descricao)
@@ -45,7 +46,7 @@ function get_disciplinas()
 {
     $conexao = conectar();
 
-    $declaracao  = $conexao->prepare("SELECT * FROM disciplina order by nomeDaDisc");
+    $declaracao  = $conexao->prepare("SELECT * FROM disciplina order by nome");
 
     $declaracao->execute();
 

@@ -209,7 +209,7 @@
                 </li>
                 <li><a><i class="fa fa-edit"></i> Aluno <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="formaluno.html">Cadastrar</a></li>
+                    <li><a href="formaluno.php">Cadastrar</a></li>
                     <li><a href="lista_aluno.php">Lista</a></li>
 
                   </ul>
@@ -217,16 +217,16 @@
 
                 <li><a><i class="fa fa-edit"></i> Disciplina <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="form_wizards.html">Cadastrar</a></li>
-                    <li><a href="form_upload.html">Listar</a></li>
+                    <li><a href="formdisciplina.html">Cadastrar</a></li>
+                    <li><a href="lista_disciplina.php">Listar</a></li>
 
                   </ul>
                 </li>
 
                 <li><a><i class="fa fa-edit"></i> Turma <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="form_wizards.html">Cadastrar</a></li>
-                    <li><a href="form_upload.html">Listar</a></li>
+                    <li><a href="form_turma.php">Cadastrar</a></li>
+                    <li><a href="lista_turma.php">Listar</a></li>
 
                   </ul>
                 </li>
@@ -234,8 +234,8 @@
 
                 <li><a><i class="fa fa-edit"></i> Projeto <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="form_wizards.html">Cadastrar</a></li>
-                    <li><a href="form_upload.html">Listar</a></li>
+                    <li><a href="form_projeto.html">Cadastrar</a></li>
+                    <li><a href="lista_projeto.php">Listar</a></li>
 
                   </ul>
                 </li>
