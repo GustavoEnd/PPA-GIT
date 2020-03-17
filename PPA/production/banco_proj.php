@@ -1,15 +1,23 @@
 <?php
 
 include 'banco.php';
-function cadastrar_projeto($titulo, $tema, $problema, $justificativa, 
-$objetivogeral, $objetivosespecificos, $horarias, $atividades, $projeto, $produto)
-{
+function cadastrar_projeto(
+    $titulo,
+    $tema,
+    $problema,
+    $justificativa,
+    $objetivogeral,
+    $objetivosespecificos,
+    $horarias,
+    $atividades,
+    $projeto,
+    $produto
+) {
+
+
     $conexao = conectar();
 
-    $sql = "INSERT INTO projeto (titulo, tema, problema, justificativa, 
-    objetivogeral, objetivosespecificos, horarias, atividades, projeto, produto) VALUES (:TITULO,:TEMA,
-    :PROBLEMA,:JUSTIFICATIVA,:OBJETIVOGERAL,:OBJETIVOSESPECIFICOS, :HORARIAS, :ATIVIDADES,:PROJETO,:PRODUTO)";
-
+    $sql = " INSERT INTO projeto (titulo, tema, problema, justificativa, objetivoGeral, objetivoEspecifico, horarios, atividadades, projeto, produto) VALUES (:TITULO,:TEMA, :PROBLEMA,:JUSTIFICATIVA,:OBJETIVOGERAL,:OBJETIVOSESPECIFICOS, :HORARIAS, :ATIVIDADES,:PROJETO,:PRODUTO)";
     $declaracao = $conexao->prepare($sql);
 
     $declaracao->bindParam(":TITULO", $titulo);
@@ -24,24 +32,34 @@ $objetivogeral, $objetivosespecificos, $horarias, $atividades, $projeto, $produt
     $declaracao->bindParam(":PRODUTO", $produto);
 
 
-    $declaracao->execute();
+    echo $declaracao->execute();
 
-    header('Location:index_proj.php');
+    header('Location:form_upload.php');
 }
 
-function atualizar_projeto($id_projeto, $titulo, $tema, $problema, $justificativa, 
-$objetivogeral, $objetivosespecificos, $horarias, $atividades, $projeto, $produto)
-{
+function atualizar_projeto(
+    $id_projeto,
+    $titulo,
+    $tema,
+    $problema,
+    $justificativa,
+    $objetivogeral,
+    $objetivosespecificos,
+    $horarias,
+    $atividades,
+    $projeto,
+    $produto
+) {
     $conn = conectar();
 
-   
 
-    $sql ="UPDATE projeto SET titulo=:TITULO, tema=:TEMA, problema=:PROBLEMA, justificativa=:JUSTIFICATIVA, 
+
+    $sql = "UPDATE projeto SET titulo=:TITULO, tema=:TEMA, problema=:PROBLEMA, justificativa=:JUSTIFICATIVA, 
     objetivogeral=:OBJETIVOGERAL, objetivosespecificos=:OBJETIVOSESPECIFICOS, horarias=:HORARIAS, atividades=:ATIVIDADES, 
     projeto=:PROJETO, produto= :PRODUTO  WHERE id_projeto= :ID_PROJETO";
 
     $declaracao = $conn->prepare($sql);
-   
+
     $declaracao->bindParam(":TITULO", $titulo);
     $declaracao->bindParam(":TEMA", $tema);
     $declaracao->bindParam(":PROBLEMA", $problema);
@@ -53,14 +71,13 @@ $objetivogeral, $objetivosespecificos, $horarias, $atividades, $projeto, $produt
     $declaracao->bindParam(":PROJETO", $projeto);
     $declaracao->bindParam(":PRODUTO", $produto);
     $declaracao->bindParam(":ID_PROJETO", $id_projeto);
-    
+
 
     $retorno = $declaracao->execute();
 
-    if($retorno){
+    if ($retorno) {
         header('Location:index_proj.php');
     }
-
 }
 
 function get_projetos()
@@ -105,5 +122,3 @@ function excluir_projeto($id_projeto)
         echo "Erro ao deletar projeto";
     }
 }
-
-

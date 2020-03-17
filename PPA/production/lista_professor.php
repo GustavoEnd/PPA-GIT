@@ -77,7 +77,7 @@
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Aluno <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="formaluno.html">Cadastrar</a></li>
+                                        <li><a href="formaluno.php">Cadastrar</a></li>
                                         <li><a href="lista_aluno.php">Lista</a></li>
 
                                     </ul>

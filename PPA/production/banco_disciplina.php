@@ -3,22 +3,22 @@
 include 'banco.php';
 
 
-function cadastrar_disciplina($nomeDaDisc, $nomeDaProf, $descricao)
-{
+function cadastrar_disciplina($nomeDaDisc, $carga, $descricao)
+{   
     $conexao = conectar();
 
-    $sql = "INSERT INTO disciplina (nomeDaDisc, nomeDaProf, descricao) VALUES (:NOMEDADISC,:NOMEDAPROF,:DESCRICAO)";
+    $sql = "INSERT INTO disciplina (nome, descricaoDisciplina, ch) VALUES (:NOME,:DESCR,:CH)";
 
     $declaracao = $conexao->prepare($sql);
 
-    $declaracao->bindParam(":NOMEDADISC", $nomeDaDisc);
-    $declaracao->bindParam(":NOMEDAPROF", $nomeDaProf);
-    $declaracao->bindParam(":DESCRICAO", $descricao);
+    $declaracao->bindParam(":NOME", $nomeDaDisc);
+    $declaracao->bindParam(":DESCR", $carga);
+    $declaracao->bindParam(":CH", $descricao);
 
 
     $declaracao->execute();
 
-    header('Location:index_disciplina.php');
+    header('Location:formdisciplina.html');
 }
 
 function atualizar_disciplina($id_disc, $nomeDaDisc, $nomeDaProf, $descricao)
@@ -32,15 +32,13 @@ function atualizar_disciplina($id_disc, $nomeDaDisc, $nomeDaProf, $descricao)
     $declaracao->bindParam(":NOMEDADISC", $nomeDaDisc);
     $declaracao->bindParam(":NOMEDAPROF", $nomeDaProf);
     $declaracao->bindParam(":DESCRICAO", $descricao);
-    
+
 
     $retorno = $declaracao->execute();
 
     if ($retorno) {
         header('Location:index_disciplina.php');
-     
     }
-   
 }
 
 function get_disciplinas()
@@ -88,6 +86,3 @@ function excluir_disciplina($id_disc)
         echo "Erro ao deletar disciplina";
     }
 }
-
-
-
