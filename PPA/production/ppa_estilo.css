@@ -7,19 +7,19 @@ table {
 
 td,
 th {
-    border: 1px solid #4682B4;
+    border: 1px solid rgb(6, 35, 59);
     text-align: left;
     padding: 5px;
 }
 
 tr:nth-child(even) {
-    background-color: #4682B4;
+    background-color: rgb(255, 255, 255);
 }
 
 .btnExcluir:link,
 .btnExcluir:visited {
     background-color: #f44336;
-    color: white;
+    color: rgb(212, 206, 206);
     padding: 7px 12px;
     text-align: center;
     text-decoration: none;
@@ -29,7 +29,7 @@ tr:nth-child(even) {
 
 .btnEditar:link,
 .btnEditar:visited {
-    background-color: #FFA500;
+    background-color: rgb(6, 35, 59);
     color: white;
     padding: 7px 12px;
     text-align: center;
@@ -40,13 +40,13 @@ tr:nth-child(even) {
 
 .btnExcluir:hover,
 .btnExcluir:active {
-    background-color: red;
+    background-color: #f44336;
     border-radius: 5px;
 }
 
 .btnEditar:hover,
 .btnEditar:active {
-    background-color: #FF4500;
+    background-color: rgb(6, 35, 59);
     border-radius: 5px;
 }
 
@@ -56,7 +56,7 @@ tr:nth-child(even) {
 
 .linkNovo:link,
 .linkNovo:visited {
-    background-color: #6495ED;
+    background-color: rgb(6, 35, 59);
     color: white;
     padding: 7px 12px;
     text-align: center;
@@ -67,7 +67,7 @@ tr:nth-child(even) {
 
 .linkNovo:hover,
 .linkNovo:active {
-    background-color: #4169E1;
+    background-color: rgb(6, 35, 59);
     border-radius: 5px;
 }
 
