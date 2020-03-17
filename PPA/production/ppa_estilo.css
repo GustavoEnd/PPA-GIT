@@ -1,13 +1,13 @@
-table {
+ /* table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border-radius: 5px;
-}
+} */
 
-td,
-th {
-    border: 1px solid rgb(6, 35, 59);
+td
+/*th*/ {
+    border: 2px solid rgb(5, 38, 71)
     text-align: left;
     padding: 5px;
 }
