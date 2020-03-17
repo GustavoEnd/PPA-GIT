@@ -51,6 +51,15 @@
         /* To give a bit of padding on the left and right */
         border-bottom: none;
     }
+
+    input {
+        border-color: transparent;
+        background-color: #e6e6ff;
+        border-radius: 10px;
+        size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: grey;
+    }
   </style>
 
 <body class="nav-md">
@@ -228,7 +237,7 @@
         <!-- INICIO FORMULARIO UPLOAD -->
 
         <fieldset class="scheduler-border">
-                        <legend class="scheduler-border">Projetos Cadastrados</legend>
+                        <legend class="scheduler-border">Projetosf Cadastrados</legend>
         <table class="table">
         <thead class="thead-dark">
           <tr>

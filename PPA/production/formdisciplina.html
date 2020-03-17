@@ -61,6 +61,29 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: grey;
     }
+    
+    .form-control {
+        border-color: transparent;
+        background-color: #e6e6ff;
+        border-radius: 10px;
+        width: 300px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: grey;
+        font-size: 10pt;
+    }
+    
+    .form-control:focus {
+        background-color: #e6e6ff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: grey;
+        font-size: 10pt;
+    }
+    
+    a,
+    a:hover,
+    a:active {
+        color: white;
+    }
 </style>
 
 <body class="nav-md">
@@ -263,10 +286,14 @@
                                 <textarea class="form-control" id="descricao" name="descricao" rows="3"> </textarea>
                             </div>
 
+                            <div class="form-group col-md-6">
+
+
+                            </div>
                             <div class="form-group col-md-6 ">
                                 <br>
                                 <button type="submit" class="btn btn-dark">Enviar</button>
-
+                                <br>
                             </div>
 
                         </div>
