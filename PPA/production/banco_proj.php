@@ -34,7 +34,7 @@ function cadastrar_projeto(
 
     echo $declaracao->execute();
 
-    header('Location:form_upload.php');
+    header('Location:lista_projeto.php');
 }
 
 function atualizar_projeto(
