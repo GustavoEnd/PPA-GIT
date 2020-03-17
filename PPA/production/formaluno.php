@@ -114,7 +114,7 @@
                                 <li><a><i class="fa fa-edit"></i> Professor <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="form.html">Cadastrar</a></li>
-                                        <li><a href="lista_professor.php">Lista</a></li>
+                                        <li><a href="lista_professor.php">Listar</a></li>
 
 
                                     </ul>
